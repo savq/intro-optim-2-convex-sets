@@ -1,0 +1,38 @@
+%! TEX root = ../main.tex
+
+\begin{enunciado}{2.10}
+Solution set of a quadratic inequality.
+Let $C \subseteq \R^n$ be the solution set of a quadratic inequality,
+$C = \{x \in \R^n \mid x^TAx + b^Tx + c \leq 0\}$,
+with $A \in \S^n, b \in \R^n,$ and $c \in R$.
+% Are the converses of these statements true?
+\end{enunciado}
+
+\newcommand{\hx}{\hat{x}}
+
+\begin{enumerate}[label=(\alph*)]
+\item Show that $C$ is convex if $A \succeq 0$.
+    Un conjunto es convexo si y solo su su intersección con una linea (conjunto afín)
+    arbitraria $L = \{\hx + tv \mid t\in\R\}$ es convexa.
+
+    Tomando $x = \hx + tv$ tenemos
+    \begin{align*}
+        (\hx + tv)^T A(\hx + tv) + b^T(\hx + tv) + c
+        (\hx^T + tv^T)(A\hx + Atv) + b^T\hx + b^Ttv + c \\
+        (\hx^TA\hx + \hx^TAtv + tv^TA\hx + tv^TAtv) + b^T\hx + b^Ttv + c \\
+        (\hx^TA\hx + 2\hx^TAvt + v^TAvt^2) + b^T\hx + b^Tvt + c &\text{ ($A$ es simétrica)} \\
+        v^TAvt^2 + 2\hx^TAvt + b^Tvt + b^T\hx + \hx^TA\hx + c \\
+        v^TAvt^2 + (2\hx^TAv + b^Tv)t + b^T\hx + \hx^TA\hx + c
+    \end{align*}
+    Sea $\alpha = v^TAv, \beta = (2x^TAv + b^Tv)$ y $\gamma = b^Tx + x^TAx + c$.
+    Podemos escribir la intersección de $C$ con $L$ como
+    \[ C \cap L = {x^T + tv \mid \alpha t^2 + \beta t + \gamma \leq 0}\]
+    La intersección es convexa si $\alpha \geq 0$. Si $A$ es semi-definida
+    positiva entonces $\alpha = v^TAv \geq 0$ para todo $v$.
+
+    La recíproca no es cierta. Que $C$ sea convexo no implica que $A \succeq 0$.
+
+% TO-DO
+% \item Show that the intersection of $C$ and the hyperplane defined by $g^T x + h = 0$
+%     (where $g\neq 0$) is convex if $A + \lambda gg^T \succeq 0$ for some $\lambda\in\R$.
+\end{enumerate}

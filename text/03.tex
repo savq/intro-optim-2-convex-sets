@@ -1,0 +1,30 @@
+%! TEX root = ../main.tex
+
+\begin{enunciado}{2.3}
+Midpoint convexity. A set $C$ is midpoint convex if whenever two points $a, b$ are in $C$, the
+average or midpoint $(a + b)/2$ is in $C$. Obviously a convex set is midpoint convex. It can
+be proved that under mild conditions midpoint convexity implies convexity. As a simple
+case, prove that if $C$ is closed and midpoint convex, then $C$ is convex.
+\end{enunciado}
+
+Recordemos que un conjunto $C$ es cerrado si y solo si contiene sus punto límite, es decir,
+el límite de cualquier sucesión de puntos de $C$ converge en un punto en $C$.
+
+Sean $a,b \in C$. Como $C$ es punto-medio convexo, entonces $(a + b)/2$.
+Definimos la sucesión $s_n = (s_{n-1} + s_{n-2})/2$
+Si tomamos $s_0 = x, s_1 = y$ obtenemos:
+
+\begin{align*}
+    s_2 = (y + x)/2
+    s_3 = (s_3 + y)/2
+    \vdots
+\end{align*}
+
+Vemos que cada iteración obtendremos un punto más cerca de $y$.
+
+Como todos los puntos de la sucesión pertenecen a $C$, podemos tomar
+dos puntos cualesquiera producidos por la sucesión como los
+valores iniciales de otra sucesión producida por la misma regla.
+Así podemos ver que ``llenar'' el segmento de recta entre $x,y$,
+probando que el conjunto es convexo.
+

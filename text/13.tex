@@ -1,0 +1,27 @@
+%! TEX root = ../main.tex
+
+\begin{enunciado}{2.13}
+Conic hull of outer products. Consider the set of rank-k outer products, defined as
+$\{XX^T \mid X \in \R^{n \times k}, \rank{X} = k\}$. Describe its conic hull in simple terms.
+\end{enunciado}
+
+
+El producto exterior $XX^T$ tiene que ser una matriz cuadrada semi-definida positiva,
+además $\rank XX^T = \rank X^T  = \rank X = k$.
+
+Ahora, sean $A, B$ matrices semi-definidas de rango $k$, se tiene que
+$\rank A+B \leq k$.  Sea $v \in\ker(A + B)$, entonces
+
+
+\[(A + B)v = 0 \iff v^T (A + B)v = 0 \iff v^T Av + v^T Bv = 0\]
+Luego también se tiene que
+\[v^T Av = 0 \iff Av = 0, v^T Bv = 0 \iff Bv = 0.\]
+Por lo que $v\in\ker(A)$ y  $v\in\ker(B)$.
+Es decir, la dimensión del núcleo de $A+B$ debe ser mayor o igual a la de los
+núcleos de $A$ o $B$. Entonces el rango de $A+B$ no puede ser menor al de
+$A$ o al de $B$.
+
+Como la multiplicación por escalar no afecta el rango, y la suma de matrices
+semi-definidas no disminuye el rango, tenemos que la envolvente cónica
+es el conjunto de matrices semi-definidas  con un rango mayor o igual a $k$.
+

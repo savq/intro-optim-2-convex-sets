@@ -1,0 +1,22 @@
+%! TEX root = ../main.tex
+
+\begin{enunciado}{2.4}
+Show that the convex hull of a set $S$ is the intersection of all convex sets that contain $S$.
+\end{enunciado}
+
+Sea $C = \{ A \mid S \subseteq A, \text{tal que $A$ es convexo} \}$.
+Por definición $\conv(S)$ contiene a $S$ y es convexa.
+entonces $\conv(S)$ es un elemento de $C$,
+por lo que $\bigcap\limits_{A\in C} A \subseteq conv(S)$.
+
+Ahora, sea $x \in \conv(S)$.
+El punto $x$ debe ser la combinación convexa de puntos $x_1, \dots, x_n$ en $S$.
+Si tomamos un conjunto convexo $A$ tal que $S \subseteq A$,
+entonces $x_1, \dots, x_n \in A$.
+Como $A$ es convexo entonces también se tiene que $x \in A$.
+Si $x\in A$ para todo $A \in C$ tenemos que $x\in \bigcap\limits_{A\in C} A$
+luego $\conv(S) \subseteq \bigcap\limits_{A\in C} A$.
+
+La envolvente convexa contiene la intersección, y la intersección contiene la envolvente convexa.
+Por lo tanto $\conv(S) = \bigcap\limits_{A\in C} A$.
+

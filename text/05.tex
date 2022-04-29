@@ -1,0 +1,35 @@
+%! TEX root = ../main.tex
+
+\begin{enunciado}{2.5}
+What is the distance between two parallel hyperplanes
+$\{x \in \R^n \mid a^Tx = b_1\}$ and
+$\{x \in \R^n \mid a^Tx = b_2\}$?
+\end{enunciado}
+% https://math.stackexchange.com/a/1484670
+
+Sea $H_1 = \{x \in \R^n \mid a^Tx = b_1\}$ y sea  $H_2 = \{x \in \R^n \mid a^Tx = b_2\}$.
+Sea $x_1$ un punto cualquiera en $H_1$ y sea $L$ la recta que pasa por $x_1$ ortogonal a $H_1$ (paralela a $a$),
+es decir, $L = \{x_1+at\}$ para todo $t\in\R$.
+
+Como $L$ es ortogonal a $H_1$, y además $H_2$ es paralelo a $H_1$ entonces $L$ intersecta
+a $H_2$ en un punto $x_2 = x_1 + at$ para algún $t$. La distancia entre $x_1$ y $x_2$ es 
+la distancia entre los dos hiperplanos.
+Para hallar $x_2$, primero hallamos $t$
+\begin{align*}
+    a^Tx_2 &= b_2 \\
+    a^T(x_1 + at) &= b_2 \\
+    a^Tx_1 + a^Tat &= b_2 \\
+    a^Tat &= b_2 - a^Tx_1 \\
+    t &= \frac{b_2 - a^Tx_1}{a^Ta} \\
+\end{align*}
+Luego $x_2 = x_1 + a\frac{b_2 - a^Tx_1}{a^Ta}$. Y para hallar la distancia vemos que
+\begin{align*}
+    x_2 &= x_1 + a\frac{b_2 - a^Tx_1}{a^Ta} \\
+    x_2 &= x_1 + a\frac{b_2 - b_1}{a^Ta} \\
+    x_2 - x_1  &= a\frac{b_2 - b_1}{a^Ta} \\
+    \norm{x_2 - x_1}  &= \norm{a\frac{b_2 - b_1}{a^Ta}} \\
+    \norm{x_2 - x_1}  &= \norm{a}\frac{\abs{b_2 - b_1}}{a^Ta} \\
+    \norm{x_2 - x_1}  &= \norm{a}\frac{\abs{b_2 - b_1}}{\norm{a}^2} \\
+    \norm{x_2 - x_1}  &= \frac{\abs{b_2 - b_1}}{\norm{a}}
+\end{align*}
+

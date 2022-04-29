@@ -1,0 +1,59 @@
+%! TEX program = xelatex
+%! TEX encoding = UTF-8 Unicode
+
+\documentclass[11pt]{article}
+\usepackage{./unal}
+\geometry{letterpaper}
+
+\title{Conjuntos Convexos}
+\author{
+    Sergio Alejandro Vargas |
+    \href{mailto:savargasqu@unal.edu.co}{savargasqu@unal.edu.co} \\
+    \normalsize{Introducción a la Optimización --- 2022-I}\\
+    \normalsize{Universidad Nacional de Colombia}
+}
+\date{\today}
+
+\setlength{\parindent}{0pt} % don't indent paragraph
+\setlength{\parskip}{1em}   % separate them with whitespace
+
+\newenvironment{enunciado}[1]{\textbf{#1}\itshape}{}
+
+
+% Notation
+\newcommand{\R}{\mathbf{R}} % real numbers
+\newcommand{\dom}{\mathbf{dom}\,}
+
+\newcommand{\conv}{\mathbf{conv}\,} % convex hull of set
+\newcommand{\dist}{\mathbf{dist}}
+\renewcommand{\int}{\mathbf{int}\,} % interior of set
+\renewcommand{\rank}{\mathbf{rank}\,}
+\renewcommand{\ker}{\mathcal{N}}
+
+\newcommand{\E}{\mathbf{E}\,} % expected value
+\newcommand{\prob}{\mathbf{prob}}
+\newcommand{\quart}{\mathbf{quartile}}
+\renewcommand{\var}{\mathbf{var}} % variance
+
+
+\begin{document}
+\maketitle
+\input{text/01}
+
+\input{text/03}
+\input{text/04}
+\input{text/05}
+
+\input{text/08}
+\input{text/09}
+\input{text/10}
+
+\input{text/13}
+\input{text/14}
+% \input{text/15} % TODO
+
+\input{text/16} % DONE
+% \input{text/17} % TODO
+% \input{text/18} % TODO
+
+\end{document}

@@ -1,0 +1,21 @@
+%! TEX root = ../main.tex
+
+\begin{enunciado}{2.16}
+    Show that if $S_1$ and $S_2$ are convex sets in $\R^{m+n}$, then so is their partial sum
+    \[
+        S = \{(x, y_1 + y_2) \mid x \in \R^m, y_1, y_2 \in \R^n, (x, y_1) \in S_1, (x, y_2) \in S_2\}
+    \]
+\end{enunciado}
+
+Sean $(x_1, y_1) \in S_1, (x_1, y_2) \in S (x_2,z_1) \in S_1$ y $(x_2, z_2) \in S$.
+Consideremos los puntos $(x_1, y_1 + y_2), (x_2, z_1, z_2)$.
+Para $0\leq \theta \leq 1$ se tiene
+\[
+    \theta(x_1, y_1 + y_2) + (1 - \theta)(x_2, z_1 + z_2) =
+        (\theta x_1 + (1-\theta)x_1, (\theta y_1 + (1-\theta)y_1) + (\theta z_1 + (1-\theta)z_1)
+\]
+$S_1$ es convexo entonces $(\theta x_1 + (1-\theta)x_1, (\theta y_1 + (1-\theta)y_1) \in S_1$.
+Igualmente $S_2$ es convexo entonces $(\theta x_1 + (1-\theta)x_1, (\theta z_1 + (1-\theta)z_1) \in S_2$.
+Luego $\theta(x_1, y_1 + y_2) + (1 - \theta)(x_2, z_1 + z_2) \in S$.
+Por lo tanto $S$ es convexo.
+

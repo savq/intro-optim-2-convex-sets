@@ -1,0 +1,35 @@
+%! TEX root = ../main.tex
+
+\begin{enunciado}{2.1}
+Let $C \subseteq \R^n$ be a convex set, with $x_1, \dots, x_k \in C$,
+and let $\theta_1, \dots, \theta_k \in \R$ satisfy $\theta_i \geq 0$,
+$\theta_1 + \cdots + \theta_k = 1$. Show that $\theta_1x_1 + \cdots + \theta_kx_k \in C$.
+(The definition of convexity is that this holds for $k = 2$; you must show it for arbitrary $k$.)
+Hint. Use induction on k.
+\end{enunciado}
+
+
+Por definición sabemos que la afirmación se cumple para $k = 2$.
+Ahora, supongamos que $\theta_1x_1 + \cdots + \theta_kx_k \in C$ se cumple para algún $k$ arbitrario.
+Veamos si se cumple para $k+1$.
+
+Tomemos \(x_1, \dots x_k, x_{k+1} \in C\), y
+$\theta_1, \dots, \theta_k, \theta_{k+1} \in \R$ tal que
+$\theta_1 + \cdots + \theta_k + \theta_{k+1} = 1$.
+Podemos reescribir la condición de la suma como
+\begin{align*}
+    \sum_{i=1}^{k+1} \theta_i   &= 1 \\
+    \sum_{i=1}^{k} \theta_i     &= 1 - \theta_{k+1} \\
+    \frac{1}{1-\theta_{k+1}}\sum_{i=1}^{k} \theta_i &= 1 \\
+    \sum_{i=1}^{k} \frac{\theta_i}{1-\theta_{k+1}}  &= 1
+\end{align*}
+Si definimos $\eta_i = \frac{\theta_i}{1-\theta_{k+1}}$ tenemos $\sum_{i=1}^{k} \eta_i  = 1$.
+
+
+Así, podemos reescribir la combinación $\theta_1x_1 + \dots \theta_kx_k + \theta_{k+1}x_{k+1}$
+como $(1-\theta_{k+1})(\eta_1x_1 + \cdots + \eta_kx_k) + \theta_{k+1}x_{k+1}$.
+Por hipótesis, si $x_1, \dots, x_k \in C$ y $\sum \eta_i = 1$ entonces $(\eta_1x_1 + \cdots + \eta_kx_k) \in C$.
+Llamemos al resultado de esta combinación $y$.
+Como el conjunto $C$ es convexo y $x,y\in C$ entonces $(1-\theta_{k+1})y + \theta_{k+1}x_{k+1} \in C$.
+Por el principio de inducción matemática la afirmación se cumple para todo $k$. 
+

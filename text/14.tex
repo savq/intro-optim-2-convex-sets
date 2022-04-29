@@ -1,0 +1,44 @@
+%! TEX root = ../main.tex
+
+\begin{enunciado}{2.14}
+    Expanded and restricted sets. Let $S \subseteq \R^n$, and let $\norm{\cdot}$ be a norm on $R^n$.
+\end{enunciado}
+
+\begin{enumerate}[label=(\alph*)]
+    \item \textit{For $a \geq 0$ we define $S_a = \{x \mid \dist(x, S) \leq a\}$,
+            where $\dist(x, S) = \inf_{y\in S} \norm{x − y}$.
+            We refer to $S_a$ as $S$ expanded or extended by $a$.
+        Show that if $S$ is convex, then $S_a$ is convex.}
+
+        Sean $x_1, x_2 \in S_a, \theta\in\R$ tal que $0\leq \theta \leq 1$.
+        Si probamos que $\dist$ es una función convexa, probamos que $S_a$ es convexa.
+        Usando la definición de $\dist$ tenemos
+        \[\dist(\theta x_1 + (1-\theta)x_2, S) = \inf_{y\in S}\norm{\theta x_1 + (1-\theta)x_2 - y} \]
+        S es convexo, entonces podemos reemplazar $y$
+        \begin{align*}
+             &= \inf_{y_1,y_2\in S}\norm{\theta x_1 + (1-\theta)x_2 - (\theta y_1 + (1-\theta)y_2)} \\
+             &= \inf_{y_1,y_2\in S}\norm{\theta(x_1 - y_1) +  (1-\theta)(x_2 - y_2)} \\
+        \end{align*}
+        Por desigualdad triangular
+        \begin{align*}
+            \dist(\theta x_1 + (1-\theta)x_2, S)&\leq \inf_{y_1,y_2\in S}(\theta\norm{x_1 - y_1} +  (1-\theta)\norm{x_2 - y_2}) \\
+                                                &\leq \theta\inf_{y_1,y_2\in S}\norm{x_1 - y_1} +  (1-\theta)\inf{\norm{x_2 - y_2}} \\
+        \end{align*}
+        $x_1$ y $x_2$ están en $S_a$ entonces $\dist(\theta x_1 + (1-\theta)x_2, S) \leq a$.
+        La combinación convexa entre $x_1$ y $x_2$ está en $S_a$, por lo tanto $S_a$ es convexa.
+
+
+    \item \textit{For $a \geq 0$ we define $S_{−a} = \{x \mid B(x, a) \subseteq S\}$, where $B(x, a)$ is the ball
+        (in the norm $\norm{\cdot}$), centered at $x$, with radius $a$.
+        We refer to $S_{−a}$ as $S$ shrunk or restricted by $a$,
+        since $S_{−a}$ consists of all points that are at least a distance $a$ from $\R^n\backslash S$.
+        Show that if $S$ is convex, then $S_{−a}$ is convex.}
+
+        Tomemos dos puntos $x_1, x_2 \in S_{-a}$ y $\theta \in \R$ tal que $1\leq\theta\leq 1$.
+        Para todo $u$ tal que $\norm{u} \leq a$ 
+        se tiene que $x_1 +u \in S$ y que $x_2 + u \in S$.
+        Como S es convexo, si sumamos $u$ a la combinación convexa de $x_1$ con $x_2$ se tiene
+        \[ \theta x_1 +(1−\theta )x_2 + u = \theta (x_1 + u)+(1−\theta)(x_2 + u) \in S \]
+        Por lo tanto  $\theta x_1 + (1 - \theta) x_2 \in s_a$.
+\end{enumerate}
+
